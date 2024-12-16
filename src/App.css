@@ -1,0 +1,361 @@
+/* App.css */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.App-header {
+  background: #0078D7;
+  color: white;
+  padding: 1em 0;
+  text-align: center;
+}
+
+main {
+  padding: 2em;
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+section {
+  margin-bottom: 2em;
+}
+
+.activity-selector,
+.calculator {
+  margin: 1em 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+select,
+input[type="number"] {
+  padding: 0.5em;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 1em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  background: #0078D7;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #005bb5;
+}
+
+.result {
+  background: #f9f9f9;
+  padding: 1em;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+footer {
+  text-align: center;
+  padding: 1em 0;
+  background: #333;
+  color: white;
+  margin-top: 2em;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+p {
+  font-size: clamp(1rem, 2.5vw, 1.8rem);
+}
+
+/* Additional styling for smaller screens */
+@media (max-width: 600px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+}
+
+.app-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  font-family: 'Optima', sans-serif;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background 0.8s ease-in-out, height 0.3s ease; /* Smooth height changes */
+}
+
+.front-page {
+  background: url(/public/front.png) center/cover no-repeat;
+}
+
+.cloud-usage-page {
+  background: url(/public/cloud1.png) center/cover no-repeat;
+}
+
+.streaming-page {
+  background: url(/public/streaming.png) center/cover no-repeat;
+}
+
+.social-media-page {
+  background: url(/public/social-media.png) center/cover no-repeat;
+}
+
+.gaming-page {
+  background: url(/public/gaming.png) center/cover no-repeat;
+}
+
+.video-call-page{
+  background: url(/public/video-call.png) center/cover no-repeat;
+}
+
+.device-page{
+  background: url(/public/device.png) center/cover no-repeat;
+}
+
+.shopping-page{
+  background: url(/public/shopping.png) center/cover no-repeat;
+}
+
+.result-page{
+  background: url(/public/result.png) center/cover no-repeat;
+}
+
+
+input[type='range'] {
+  width: 100%;
+  appearance: none;
+  height: 10px;
+  background: linear-gradient(to right, #0091ff 50%, #EEE 50%);
+  border-radius: 5px;
+  outline: none;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+input[type='range']:hover {
+  background: linear-gradient(to right, #0076cc 50%, #EEE 50%);
+}
+
+input[type='range']::-webkit-slider-thumb {
+  appearance: none;
+  height: 25px;
+  width: 25px;
+  background: #fff;
+  border: 3px solid #0091ff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type='range']::-moz-range-thumb {
+  appearance: none;
+  height: 25px;
+  width: 25px;
+  background: #fff;
+  border: 3px solid #0091ff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type='range']::-webkit-slider-thumb:hover {
+  transform: scale(1.2); /* Slight scale-up on hover */
+}
+
+/* Hide the native radio */
+input[type="radio"] {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Container for custom bullet and label text */
+.custom-radio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #333;
+  transition: color 0.2s ease;
+}
+
+.custom-radio:hover {
+  color: #0091ff; /* Highlight label on hover */
+}
+
+/* The custom bullet element */
+.custom-radio .bullet {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  border: 2px solid #0091ff;
+  margin-right: 10px;
+  background: white;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+input[type="radio"]:checked + .bullet {
+  background: #0091ff;
+}
+
+/* The checked state: When input is checked, target parent label and pseudo-element */
+input[type="radio"]:checked + .bullet::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+}
+
+/* Also ensure accessible focus styles */
+input[type="radio"]:focus + .bullet {
+  outline: 2px dotted #333;
+  outline-offset: 2px;
+}
+
+.quiz-button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #0091ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.quiz-button:hover {
+  background-color: #006aff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+.quiz-button:focus {
+  outline: 3px solid #0076cc;
+  outline-offset: 2px;
+}
+
+/* Optional: for a grey Back button */
+.quiz-button.grey {
+  background-color: #AAA; /* Grey base color */
+}
+
+.quiz-button.grey:hover {
+  background-color: #888888c6; /* Darker grey on hover */
+}
+
+/* Results Page Container */
+.results-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Optima', sans-serif;
+  padding: 2rem; /* Keep some padding for spacing */
+  color: #333; /* Ensure text is readable on the background */
+}
+
+/* Persistent Navigation Bar */
+.results-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  position: sticky;
+  top: 0;
+  padding: 2rem;
+  z-index: 10;
+  padding-bottom: 4rem;
+}
+
+/* Individual Navigation Box */
+.result-box {
+  background-color: #0091ff;
+  color: #ffffff;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all 0.3s ease;
+  border-radius: 0;
+}
+
+.result-box:hover {
+  background-color: #0077cc;
+  transform: translateY(-3px);
+}
+
+.result-box.active {
+  background-color: #ff8c00;
+}
+
+/* Main Content Area */
+.results-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Aligns content to the top */
+  align-items: center;
+  padding: 1.5rem;
+  width: 100%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.854); /* Semi-transparent white */
+  border-radius: 8px; /* Optional rounded corners */
+  max-width: 100vh;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  height: 80vh; /* Limits the height */
+  overflow-y: auto; /* Enables scrolling for overflow */
+  margin: 2rem auto;
+}
+
+.results-content h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.results-content p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.5;
+}
+

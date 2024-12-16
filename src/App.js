@@ -3046,8 +3046,8 @@ const trees = Math.round(totalCO2 / 21);      // 21 kg CO₂ offset per tree ann
                           )}
                           {activeResult === "Statistics" && (
                             <><motion.div
-                            initial={{ opacity: 0, x: -50 }}
-                            animate={{ opacity: 1, x: 0 }}
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
                           >
                             <div className="stats-container">
@@ -3176,6 +3176,40 @@ const trees = Math.round(totalCO2 / 21);      // 21 kg CO₂ offset per tree ann
                             </>
                           )}
                         </motion.div>
+                        {/* Re-Take Quiz Button */}
+                        <button
+                        className="retake-button"
+                        onClick={() => {
+                            // Reset quiz state
+                            setIsQuizStarted(false);
+                            setQuizStep(0);
+                        
+                            // Reset all slider and input states
+                            setCloudStorage(0);
+                            setBackupFrequency(0);
+                            setDeviceCount(0);
+                            setStreamingHours(0);
+                            setStreamingQuality("");
+                            setBackgroundAudioFreq(0);
+                            setSocialMediaHours(0);
+                            setUploadFrequency(0);
+                            setSocialMediaAccounts(0);
+                            setGamingHours(0);
+                            setEnergyIntensiveDevices("");
+                            setEnergySavingFreq(0);
+                            setVideoCallHours(0);
+                            setCameraUsageFreq(0);
+                            setPassiveParticipation(0);
+                            setConnectedDevices(0);
+                            setOvernightCharging(0);
+                            setDeviceEnergySaving(0);
+                            setOnlineShoppingFreq(0);
+                            setLiveShoppingEvents(0);
+                            setActiveResult("Results"); // Reset active navigation to "Results
+                        }}
+                        >
+                        Re-Take Quiz
+                        </button>
                       </div>
                     )}                                                                                                                                                                                                                                                                                              
                 </section>

@@ -359,3 +359,21 @@ input[type="radio"]:focus + .bullet {
   line-height: 1.5;
 }
 
+.retake-button {
+  position: fixed; /* Fixes the button to the viewport */
+  bottom: 20px; /* Distance from bottom */
+  right: 20px; /* Distance from right */
+  padding: 10px 20px;
+  background-color: #007bff; /* Blue background */
+  color: #ffffff; /* White text */
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.retake-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
